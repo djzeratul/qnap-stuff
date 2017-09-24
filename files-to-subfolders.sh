@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #
 # This will take all files in a directory and move them into subfodlers 
 # of the same name as the file
