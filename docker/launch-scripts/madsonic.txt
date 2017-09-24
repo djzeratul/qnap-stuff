@@ -1,0 +1,9 @@
+docker run -d \
+    -p 4040:4040 \
+    --name=madsonic \
+    -e CONTEXT_PATH=\ \
+    -e SSL=no \
+    -v <path-to-files>:/media \
+    -v <path-to-config>:/config \
+    -v /etc/localtime:/etc/localtime:ro \
+    madsonic/ubuntu-madsonic

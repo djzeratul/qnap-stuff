@@ -1,0 +1,8 @@
+#
+#ProxyPass
+#
+ProxyPass /<path> http://<server-ip>:<port>/<path>
+ProxyPassReverse /<path> http://<server-ip>:<port>/<path>
+#
+#End ProxyPass
+#

@@ -1,0 +1,14 @@
+docker run \
+    --cap-add=NET_ADMIN \
+    --device=/dev/net/tun -d \
+    --name=transmission \
+    -v <path-to-data-dir>:/data \
+    -v <path-to-config-dir>:/config \
+    -v <path-to-download-dir>:/data/download \
+    -v /etc/localtime:/etc/localtime:ro \
+    --env-file <path-to-env> \
+    -p 9091:9091 \
+    --dns 8.8.8.8 \
+    --dns 8.8.4.4 \
+    --restart=always \
+    haugene/transmission-openvpn

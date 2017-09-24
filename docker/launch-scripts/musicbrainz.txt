@@ -1,0 +1,9 @@
+docker create --name=musicbrainz \
+    -v <path-to-config>:/config \
+    -v <path-to-data>:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e BRAINZCODE=<musicbrainz-api-key> \
+    -e TZ=<timezone> \
+    -e WEBADDRESS=<server-ip> \
+    -p 5000:5000 \
+    linuxserver/musicbrainz

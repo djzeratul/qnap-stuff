@@ -1,0 +1,30 @@
+docker run -d \
+    --cap-add=NET_ADMIN \
+    -p 9080:9080 \
+    -p 9443:9443 \
+    -p 8118:8118 \
+    -p 3000:3000 \
+    --name=rtorrentvpn \
+    -v <download-dir>:/data/download \
+    -v <config-dir>:/config \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e VPN_ENABLED=yes \
+    -e VPN_USER=<pia-username> \
+    -e VPN_PASS=<pia-password> \
+    -e VPN_REMOTE=<pia-server> \
+    -e VPN_PORT=1198 \
+    -e VPN_PROTOCOL=udp \
+    -e VPN_DEVICE_TYPE=tun \
+    -e VPN_PROV=pia \
+    -e STRONG_CERTS=yes \
+    -e STRICT_PORT_FORWARD=yes \
+    -e ENABLE_PRIVOXY=yes \
+    -e ENABLE_FLOOD=both \
+    -e LAN_NETWORK=192.168.0.0/24 \
+    -e NAME_SERVERS=209.222.18.222,37.235.1.174,209.222.18.218,37.235.1.177,84.200.69.80,84.200.70.40 \
+    -e DEBUG=false \
+    -e PHP_TZ=<timezone> \
+    -e UMASK=000 \
+    -e PUID=0 \
+    -e PGID=0 \
+    binhex/arch-rtorrentvpn

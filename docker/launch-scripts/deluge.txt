@@ -1,0 +1,29 @@
+docker run -d \
+    --cap-add=NET_ADMIN \
+    -p 8112:8112 \
+    -p 8118:8118 \
+    -p 58846:58846 \
+    -p 58946:58946 \
+    --name=delugevpn \
+    -v <path-to-data>:/data \
+    -v <path-to-config>:/config \
+    -v <path-to-downloads>:/data/downloads \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e VPN_ENABLED=yes \
+    -e VPN_USER=<pia-username> \
+    -e VPN_PASS=<pia-password> \
+    -e VPN_REMOTE=<pia-server> \
+    -e VPN_PORT=1198 \
+    -e VPN_PROTOCOL=udp \
+    -e VPN_DEVICE_TYPE=tun \
+    -e VPN_PROV=pia \
+    -e STRONG_CERTS=yes \
+    -e STRICT_PORT_FORWARD=yes \
+    -e ENABLE_PRIVOXY=yes \
+    -e LAN_NETWORK=192.168.0.0/24 \
+    -e NAME_SERVERS=8.8.8.8,8.8.4.4 \
+    -e DEBUG=false \
+    -e UMASK=000 \
+    -e PUID=0 \
+    -e PGID=0 \
+    binhex/arch-delugevpn

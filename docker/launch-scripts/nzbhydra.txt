@@ -1,0 +1,7 @@
+docker create --name=nzbhydra \
+  -v <path-to-config>:/config \
+  -v <path-to-downloader>:/downloads \
+  -v /etc/localtime:/etc/localtime:ro \
+  -e TZ=<timezone> \
+  -p 5075:5075 \
+linuxserver/hydra

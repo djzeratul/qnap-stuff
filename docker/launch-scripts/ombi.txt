@@ -1,0 +1,6 @@
+docker create --restart=always --name=ombi \
+  -p 3579:3579 \
+  -e TZ=<timezone> \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v <path-to-config>:/config \
+linuxserver/ombi
