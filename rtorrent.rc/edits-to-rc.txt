@@ -1,0 +1,6 @@
+# edits to rtorrent.rc
+# extract rars
+
+# Unrar rar files after download completion
+system.method.set_key = 
+event.download.finished,unpack_rar,"execute=/config/scripts/unrar_files.sh,$d.get_base_path="
