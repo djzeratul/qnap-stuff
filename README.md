@@ -4,7 +4,7 @@ QNAP Stuff aims to provide helper scripts and a [wiki](https://github.com/djzera
 ## Docker
 This contains Docker related scripts or init commands. Env files for specific versions of containers.
 
-## Scripts
+## Shell
 Shell scripts for related functions. Can be run by themselves, on cron, etc.
 
 ## Images
