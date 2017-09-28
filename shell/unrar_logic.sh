@@ -1,13 +1,12 @@
 #!/bin/bash
 pidDir=/config/scripts/pidfile
-downloadPath=/data/download/torrent/
 #cd to download path
 cd $downloadPath
 #Create only 1 instance of this script to avoid rTorrent crashing
 if [ ! "$(ls /config/scripts | fgrep -i pidfile)" ]; then
         touch $pidDir
         #Find and repeat for all folders and subfolders
-        for directory in $(find $downloadPath -type d); do
+        for directory in $(find $inputdir -type d); do
                 #Check for .rar files and unpack them if found
                 if [ "$(ls $directory | fgrep -i .rar)" ]; then
                         rarFile=`ls $directory | fgrep -i .rar`;
