@@ -1,7 +1,7 @@
 #!/bin/bash
+export inputdir=$1
 #vars change for your setup
 script=./unrar_logic.sh
-export inputdir=$1
 log_location=/share/Container/rtorrent/config/scripts/logs/extract.log
 #inst logfile
 touch $log_location
