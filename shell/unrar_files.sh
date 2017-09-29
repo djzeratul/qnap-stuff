@@ -6,7 +6,7 @@ log_location=./logs/extract.log
 #inst logfile
 touch $log_location
 #run logic script
-$script >> $log_location &
+. $script >> $log_location &
 pid=$!
 MaxFileSize=5242880
 while kill -0 $pid 2> /dev/null; do
