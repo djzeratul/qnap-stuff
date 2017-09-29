@@ -26,7 +26,7 @@ if [ ! "$(ls /config/scripts | fgrep -i pidfile)" ]; then
                                 searchPath="$directory/$zipFiles"
                                 unzip -n $searchPath -d $directory
                         done
-                        #When there is .zip files there are often .rar/.001 in them. Check and unpack if so
+                        #When there are .zip files there are often .rar/.001 in them. Check and unpack if so
                         if [ "$(ls $directory | fgrep -i .rar)" ]; then
                         rarFile=`ls $directory | fgrep -i .rar`;
                         searchPath="$directory/$rarFile"
