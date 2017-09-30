@@ -5,6 +5,8 @@ pidDir='/config/scripts/pidfile'
 SAVEIFS=$IFS
 #Prevent spaces from interfering with for loop
 IFS=$(echo -en "\n\b")
+#For log datestamping
+printf '\ndate +%F\n'
 #Create only 1 instance of this script to avoid rTorrent crashing
 if [ ! "$(ls /config/scripts | fgrep -i pidfile)" ]; then
         touch $pidDir
