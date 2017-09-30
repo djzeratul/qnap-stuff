@@ -7,7 +7,7 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 #For log datestamping
 DATE=`date +%c`
-printf "\n$DATE\n"
+printf "\n============================\n$DATE\n============================\n"
 #Create only 1 instance of this script to avoid rTorrent crashing
 if [ ! "$(ls /config/scripts | fgrep -i pidfile)" ]; then
         touch $pidDir
