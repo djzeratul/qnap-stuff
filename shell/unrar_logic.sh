@@ -6,7 +6,8 @@ SAVEIFS=$IFS
 #Prevent spaces from interfering with for loop
 IFS=$(echo -en "\n\b")
 #For log datestamping
-echo -e "\ndate +%c\n"
+echo -e `\n`
+echo `date +%c`
 #Create only 1 instance of this script to avoid rTorrent crashing
 if [ ! "$(ls /config/scripts | fgrep -i pidfile)" ]; then
         touch $pidDir
